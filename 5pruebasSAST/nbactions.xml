@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>ui.Autorizacion</exec.mainClass>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>ui.Autorizacion</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>ui.Autorizacion</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.appArgs></exec.appArgs>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-sonar</actionName>
+            <displayName>sonar</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>verify</goal>
+                <goal>sonar:sonar</goal>
+            </goals>
+            <properties>
+                <sonar.projectKey>practica_SAST -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_16f14d1b5d69bb1af8c3273518c144a1ce5c45d3</sonar.projectKey>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-sonar2</actionName>
+            <displayName>sonar2</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>verify</goal>
+                <goal>sonar:sonar</goal>
+            </goals>
+            <properties>
+                <sonar.projectKey>practica_SAST \</sonar.projectKey>
+                <sonar.host.url>http://localhost:9000 \</sonar.host.url>
+                <sonar.login>sqp_16f14d1b5d69bb1af8c3273518c144a1ce5c45d3</sonar.login>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-sonar3</actionName>
+            <displayName>sonar3</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>verify</goal>
+                <goal>sonar:sonar</goal>
+            </goals>
+            <properties>
+                <sonar.projectKey>practica_SAST</sonar.projectKey>
+                <sonar.host.url>http://localhost:9000</sonar.host.url>
+                <sonar.login>sqp_16f14d1b5d69bb1af8c3273518c144a1ce5c45d3</sonar.login>
+            </properties>
+        </action>
+    </actions>
