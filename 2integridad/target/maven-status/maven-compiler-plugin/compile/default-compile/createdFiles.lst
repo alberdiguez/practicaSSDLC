@@ -1,0 +1,9 @@
+capanegocio\AgendaFacade.class
+capanegocio\Gestor.class
+capanegocio\Usuario.class
+capanegocio\SecurityUtils.class
+capanegocio\Admin.class
+com\mycompany\autorizacion\Autorizacion.class
+capanegocio\GestorPermisos.class
+capanegocio\Asistente.class
+capanegocio\NoAutorizadoException.class
